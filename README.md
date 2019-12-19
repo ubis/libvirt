@@ -21,7 +21,7 @@ You should read the following links:
 ## Host
 
 * OS: Arch Linux x86_64
-* Kernel: 5.3.1-arch1-1-ARCH
+* Kernel: 5.4.5-arch1-1 (or latest, i run `pacman -Syu` daily)
 * GPU: Integrated Intel Graphics
 * Disk: NVME SSD as main disk
 
@@ -114,6 +114,9 @@ and
   <qemu:env name="QEMU_PA_SERVER" value="/run/user/1000/pulse/native"/>
 </qemu:commandline>
 ```
+
+### 2019 12 19 UPDATE
+While playing games I haven't noticed any sound glitches or distortions. However, I noticed them when listening to music. Someone in reddit suggested to change soundcard bitrate to match Host/Guest, since PulseAudio defaults it to 44100, so I changed on my Win10 Guest. This change improved things, but not so much. There's QEMU patches for sound fixes which I haven't tried yet. Usually I don't listen music from my Guest so I won't bother for now.
 
 #### Network:
 I have two NIC's configured on the Guest, one is bridge and another one is NAT.
